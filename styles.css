@@ -1,0 +1,483 @@
+body {
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+ml-auto, .mx-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto, .mx-auto {
+  margin-right: auto !important;
+}
+.navbar{
+  background-color: transparent;
+  border: none;
+  margin-top: 5%;
+  display: inline-block;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+.navbar-nav {
+  
+  display: inline-block;
+}
+.navbar-header {
+  margin-left: 10%;
+}
+.navbar-nav>li {
+   display: inline-block;
+}
+
+.navbar-brand{
+  display: inline-block;
+
+}
+.navbar-brand>img{
+  display: inline-block;
+  margin-left:50px;
+}
+
+
+
+.container-student{
+  text-align: center;
+  margin-top:8%;
+  margin-left: 25%;
+  margin-right: 25%;
+  position: relative;
+}
+
+.container-proiecte{
+  text-align: center;
+  margin-top:3%;
+}
+
+body{
+background-color: #e9e7de;
+}
+
+
+.noticia-text-regular {
+  font-family: "Noticia Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noticia-text-bold {
+  font-family: "Noticia Text", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.noticia-text-regular-italic {
+  font-family: "Noticia Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.noticia-text-bold-italic {
+  font-family: "Noticia Text", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+*{
+  font-family: "Noticia Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.negru{
+  color: #1e2203;
+}
+
+.test{
+  margin-top: 1%;
+  background-color: #e9e7de;
+}
+
+.lasama{
+  margin-bottom: 1%;
+  background-color: #e9e7de;
+}
+
+
+
+
+.text-divider {
+  margin: 2em 25%;
+  line-height: 0;
+  text-align: center;
+  width: 50%;
+  position: relative;
+}
+
+.text-divider span {
+  background-color: #e9e7de;
+  padding: 0.5em;
+  position: relative;
+  z-index: 1;
+}
+
+.text-divider:before {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #1e2203, transparent);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+
+
+
+.loader-wrapper {
+  z-index: 99 !important;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e9e7de;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 1s infinite ease-in;
+}
+
+
+
+@keyframes loader-inner {
+  0% { height: 0%;}
+  25% { height: 0%;}
+  50% { height: 100%;}
+  75% { height: 100%;}
+  100% { height: 0%;}
+}
+
+
+.ubb {
+  text-decoration: none;
+  display: inline;
+  color: #18272F;
+  font-weight: 700;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.ubb::before {
+  text-decoration: none; 
+
+  content: '';
+  background-color: #fcf8e3;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.ubb:hover::before {
+  text-decoration: none; 
+
+  bottom: 0;
+  height: 100%;
+}
+
+
+
+
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.switch > span {
+  position: absolute;
+  top: 14px;
+  pointer-events: none;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+  width: 50%;
+  text-align: center;
+}
+
+input.check-toggle-round-flat:checked ~ .off {
+  color: #F36F25;
+}
+
+input.check-toggle-round-flat:checked ~ .on {
+  color: #fff;
+}
+
+.switch > span.on {
+  left: 0;
+  padding-left: 2px;
+  color: #F36F25;
+}
+
+.switch > span.off {
+  right: 0;
+  padding-right: 4px;
+  color: #fff;
+}
+
+.check-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.check-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.check-toggle-round-flat + label {
+  padding: 2px;
+  width: 97px;
+  height: 35px;
+  background-color: #F36F25;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.check-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #F36F25;
+  
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.check-toggle-round-flat + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 48px;
+  background-color: #fff;
+  -webkit-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -ms-border-radius: 52px;
+  -o-border-radius: 52px;
+  border-radius: 52px;
+  -webkit-transition: margin 0.2s;
+  -moz-transition: margin 0.2s;
+  -o-transition: margin 0.2s;
+  transition: margin 0.2s;
+}
+
+
+input.check-toggle-round-flat:checked + label:after {
+  margin-left: 44px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-student {
+  position: relative;
+  text-align: center;
+}
+
+.text-element {
+  padding: 10px 20px;
+  color: white;
+  display: inline-block;
+  font-size: 3.5vmin;
+  cursor: pointer;
+  margin-top: 100px;
+}
+
+.branch {
+  position: absolute;
+  top: 60%;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.branch.left {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.branch.right {
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  display: none;
+  position: absolute;
+  top: -50%;
+  white-space: nowrap;
+}
+
+.card-left {
+  right: 100%;
+}
+
+.card-right {
+  left: 100%;
+}
+
+
+.text-element:hover ~ .branch.left {
+  width: 24%;
+  opacity: 1;
+}
+
+.text-element:hover ~ .branch.left .card-left {
+  display: block;
+}
+
+.text-element:hover ~ .branch.right {
+  width: 24%;
+  opacity: 1;
+}
+
+.text-element:hover ~ .branch.right .card-right {
+  display: block;
+}
+
+
+.cardd{
+  height: 300px;
+  width: 300px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background-color: #b1a0a0;
+  overflow: hidden;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  top: -50%;
+  white-space: nowrap;
+}
+.cardd::before{
+  content: '';
+  width: 120px;
+  height: 600px;
+  left: 60px;  
+  top: -120px;
+  background: linear-gradient(#73e2ee,#c86cec);
+  position: absolute;
+  animation: animate 5s linear infinite;
+}
+
+
+
+.cardd.card-right::after{
+  
+  content: "Projects \A \A You can check out my projects on my GitHub page. \A \ARight now I am quite busy with school and still learning, but I will make them visible in the near future.";
+  font-size: 14px;
+  white-space: pre;
+  display: inline-block;
+  text-wrap: balance;
+  word-wrap: break-word;
+  font-family: "Noticia Text", serif;
+  font-weight: 300;
+  background-image:url(https://www.ubbcluj.ro/images/logo/logo_cs.png);
+  background-size: 100% 100%;
+  position: absolute;
+  background: #ebe4e4;
+  inset: 5px;
+  border-radius: 5px;
+}
+
+
+.cardd.card-left::after{
+  
+  content: "Education \A \A I am currently studying mathematics and\A computer science at The Faculty of \A Mathematics and Computer Science, BBU. \A \A I am currently learning api development \A and data parsing and analysis using Python.";
+  font-size: 14px;
+  white-space: pre;
+  display: inline-block;
+  text-wrap: balance;
+  word-wrap: break-word;
+  font-family: "Noticia Text", serif;
+  font-weight: 300;
+  background-image:url(https://www.ubbcluj.ro/images/logo/logo_cs.png);
+  background-size: 100% 100%;
+  position: absolute;
+  background: #ebe4e4;
+  inset: 5px;
+  border-radius: 5px;
+}
+
+
+
+@keyframes animate{
+  0%{
+      transform: rotate(0deg);
+  }
+
+  100%{
+      transform: rotate(360deg);
+  }
+}
+
+.center-card{
+  display: inline-block;
+  padding: 1%;
+  padding-top: 0;
+}
