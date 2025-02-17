@@ -24,7 +24,27 @@
   
 
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const htmlElement = document.documentElement;
+    const switchElement = document.getElementById('darkModeSwitch');
 
+    // Set the default theme to dark if no setting is found in local storage
+    const currentTheme = localStorage.getItem('bsTheme') || 'dark';
+    htmlElement.setAttribute('data-bs-theme', currentTheme);
+    switchElement.checked = currentTheme === 'dark';
+
+    switchElement.addEventListener('change', function () {
+        if (this.checked) {
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+            localStorage.setItem('bsTheme', 'dark');
+        } else {
+            htmlElement.setAttribute('data-bs-theme', 'light');
+            localStorage.setItem('bsTheme', 'light');
+        }
+    });
+});
+</script>
 <body onload="document.body.style.opacity='1'">
   
   <nav class="navbar navbar-expand-lg">
@@ -50,7 +70,9 @@
           <div class="vr border-4 opacity-75" style="height: 20px;"></div>
 
           <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fa-regular fa-folder-open fa-2xl negru"></i></a></li>
+       
           
+
         </ul>
       </div>
     </div>
@@ -78,7 +100,7 @@
           </div>
       </div>
         
-        <h1 class="display-1 noticia-text-bold negru text-element">
+        <h1 class="display-1 noticia-text-bold negru text-element daa">
           <mark>LATEȘ CODRIN-GABRIEL</mark>
         </h1>
         <h4 lang="ro" class="negru test">

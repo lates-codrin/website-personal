@@ -3,6 +3,8 @@ body {
   background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
   opacity: 0;
   transition: opacity 3s;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
 }
 
 
@@ -143,10 +145,112 @@ ml-auto, .mx-auto {
   margin-top:3%;
 }
 
-body{
-background-color: #e9e7de;
+body {
+  background-color: #e9e7de;
+  
+}
+mark {
+  background-color: rgb(235, 225, 181);
+  color: black;
+
+}
+/* Dark Mode */
+html[data-bs-theme='dark'] {
+  background-color: #121212; /* Dark background */
 }
 
+html[data-bs-theme='dark'] body {
+  background-image: radial-gradient(circle, #ffffff 1px, rgba(255, 255, 255, 0) 1px);
+  background-color: #181818; /* Dark background */
+  color: #e1e1e1; /* Light text */
+  
+}
+
+html[data-bs-theme='dark'] .navbar {
+  background-color: #33333300; /* Dark navbar */
+}
+
+html[data-bs-theme='dark'] .navbar-brand, 
+html[data-bs-theme='dark'] .navbar-nav .nav-link {
+  color: #f1f1f1; /* Light text for navbar in dark mode */
+}
+
+html[data-bs-theme='dark'] .navbar-nav .nav-link:hover {
+  color: #F36F25; /* Hover effect for dark mode */
+}
+html[data-bs-theme='dark'] .lasama {
+  color: #ffffff; /* Hover effect for dark mode */
+  background-color: #00000000;
+}
+html[data-bs-theme='dark'] .test {
+  color: #ffffff; /* Hover effect for dark mode */
+  background-color: #00000000;
+}
+
+
+html[data-bs-theme='dark'] .ubb {
+  background-color: #ffffff; /* Dark modal background */
+  color: #050505; /* Light text */
+}
+html[data-bs-theme='dark'] .modal-header {
+  background: linear-gradient(to right, #ff6b6b, #ff6b6b);
+}
+
+html[data-bs-theme='dark'] .modal-footer {
+  background-color: #ffffff; /* Dark modal footer */
+}
+html[data-bs-theme='dark'] .modal-body {
+  background-color: #ffffff; /* Dark modal footer */
+}
+html[data-bs-theme='dark'] .btn-secondary {
+  background-color: #a7a7a7;
+  color: #e1e1e1; /* Light text */
+}
+
+html[data-bs-theme='dark'] .btn-secondary:hover {
+  background-color: #857f7f; /* Darker on hover */
+}
+
+html[data-bs-theme='dark'] .switch > span {
+  color: #fff; /* White text for switch */
+}
+
+html[data-bs-theme='dark'] .negru {
+  color: #e1e1e1; /* Light text for dark mode */
+}
+
+html[data-bs-theme='dark'] .card {
+  background-color: #2b2b2b;
+  color: #e1e1e1;
+}
+
+html[data-bs-theme='dark'] .cardd {
+  background-color: #444;
+  color: #e1e1e1;
+}
+
+html[data-bs-theme='dark'] .text-divider {
+  color: #e1e1e1;
+}
+
+/* For the branch cards */
+html[data-bs-theme='dark'] .cardd.card-left::after,
+html[data-bs-theme='dark'] .cardd.card-right::after {
+  background: #333; /* Dark background for card content */
+}
+
+/* Customize specific icons or other elements if needed */
+html[data-bs-theme='dark'] .fa-2xl {
+  color: #f1f1f1; /* Light icons in dark mode */
+}
+html[data-bs-theme='dark'] .daa {
+  color: #f1f1f1; /* Light icons in dark mode */
+}
+html[data-bs-theme='dark'] mark {
+  background-color: rgb(255, 255, 255);
+  color: black;
+
+}
 
 .noticia-text-regular {
   font-family: "Noticia Text", serif;
@@ -261,6 +365,7 @@ background-color: #e9e7de;
   text-decoration: none;
   display: inline;
   color: #18272F;
+  
   font-weight: 700;
   position: relative;
   user-select: none;
