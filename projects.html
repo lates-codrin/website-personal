@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lates C. Codrin-Gabriel - Portofoliu</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="projects.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+
+
+
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const confirmButton = document.getElementById("confirmRedirectBtn");
+    
+        // Add event listeners to all project links
+        document.querySelectorAll(".open-github-modal").forEach(link => {
+            link.addEventListener("click", function () {
+                const githubLink = this.getAttribute("data-github-link");
+                confirmButton.setAttribute("href", githubLink); // Update button link
+            });
+        });
+    });
+    </script>
+    
+<body onload="document.body.style.opacity='1'">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand noticia-text negru" href="index.html">
+                <i class="fa-solid fa-terminal fa-1xl"></i> Lateș Codrin-Gabriel
+            </a>
+
+            <!-- Hamburger Button (only visible on small screens) -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#baraNavigatie">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Navbar Links (hidden on large screens by default) -->
+            <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="baraNavigatie">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/lates-codrin"><i
+                                class="fa-brands fa-github fa-2xl negru"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa-brands fa-linkedin fa-2xl negru"
+                                data-bs-toggle="modal" data-bs-target="#confirmModal"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i
+                                class="fa-brands fa-stack-overflow fa-2xl negru" data-bs-toggle="modal"
+                                data-bs-target="#confirmModal"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-at fa-2xl negru"
+                                data-bs-toggle="modal" data-bs-target="#confirmModal"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa-brands fa-facebook fa-2xl negru"
+                                data-bs-toggle="modal" data-bs-target="#confirmModal"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa-brands fa-discord fa-2xl negru"
+                                data-bs-toggle="modal" data-bs-target="#confirmModal"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-student">
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmModalLabel">Ups!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="fas fa-exclamation-triangle warning-icon"></i>
+                        <p class="mb-0">Inca nu am setat acest profil.<br>Incearca mai tarziu!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fas fa-check me-2"></i>Confirma
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirmModalCard" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmModalLabel">Ups!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="fas fa-exclamation-triangle warning-icon"></i>
+                        <p class="mb-0">Acest proiect este privat.<br>Incearca mai tarziu!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fas fa-check me-2"></i>Confirma
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirmModalCardRedirect" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmModalLabel">Ups!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="fas fa-info-circle warning-icon"></i>
+                        <p class="mb-0">
+                            Acest link va trimite catre <b>Github.com</b>.<br>
+                            Click "Confirma" pentru a fi redirectionat!
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Updated Button to Redirect -->
+                        <a id="confirmRedirectBtn" href="#" target="_blank" class="btn btn-warning">
+                            <i class="fas fa-check me-2"></i>Confirma
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <section class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center mb-5">
+                    <h1 class="display-4 font-weight-bolder">Proiecte</h1>
+                    <p class="lead">Proiecte realizate in intervalul 2024-2025. </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="card text-dark card-has-bg click-col"
+                        style="background: url('https://source.unsplash.com/800x600/?office') center/cover no-repeat;">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                            <div class="card-body">
+                                <small class="card-meta mb-2">UNIVERSITY WORK</small>
+                                <h4 class="card-title mt-0">
+                                    <a class="text-dark open-github-modal" href="#" 
+                                       data-github-link="https://github.com/lates-codrin/math-program" 
+                                       data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
+                                       Math Program
+                                    </a>
+                                </h4>
+                                
+                                <p class="card-text">
+
+                                    Add numbers or insert at position in a list.
+                                    Remove or replace numbers or sublists of a list.
+                                    Get numbers with certain properties from list.
+                                    Filter list to contain numbers with certain properties.
+                                    Perform operations such as summation of elements, GCD(), MAX() on the list.
+                                    Undo any operation made on the list.
+                                </p>
+                                <small><i class="far fa-clock"></i> October 15, 2020</small>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <img class="mr-3 rounded-circle"
+                                        src="me.jpg"
+                                        alt="Generic placeholder image" style="max-width:50px">
+                                    <div class="media-body">
+                                        <h6 class="my-0 text-dark d-block">Lateș Codrin-Gabriel</h6>
+                                        <small>Student @ FMI UBB</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="card text-dark card-has-bg click-col"
+                        style="background: url('https://source.unsplash.com/800x600/?office') center/cover no-repeat;">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                            <div class="card-body">
+                                <small class="card-meta mb-2">UNIVERSITY WORK</small>
+                                <h4 class="card-title mt-0">
+                                    <a class="text-dark open-github-modal" href="#" 
+                                       data-github-link="https://github.com/lates-codrin/airport-plane-manager" 
+                                       data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
+                                       Airport Plane Manager
+                                    </a>
+                                </h4>
+                                <p class="card-text">
+
+                                    Perform CRUD operations on planes and passengers.<br>
+                                    Sort & combine planes by different criterias.
+                                    Visualize planes and passengers using the Plane Explorer.
+                                    And much more to come!
+                                </p>
+                                <small><i class="far fa-clock"></i> October 15, 2020</small>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <img class="mr-3 rounded-circle"
+                                        src="me.jpg"
+                                        alt="Generic placeholder image" style="max-width:50px">
+                                    <div class="media-body">
+                                        <h6 class="my-0 text-dark d-block">Lateș Codrin-Gabriel</h6>
+                                        <small>Student @ FMI UBB</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="card text-dark card-has-bg click-col"
+                        style="background: url('https://source.unsplash.com/800x600/?office') center/cover no-repeat;">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                            <div class="card-body">
+                                <small class="card-meta mb-2">PERSONAL WORK</small>
+                                <h4 class="card-title mt-0">
+                                    <a class="text-dark" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#confirmModalCard">Schedule Update API</a>
+                                </h4>
+                                <p class="card-text">
+
+                                    A service that lets you connect a schedule (HTML Table format) and that notifies you if there are changes 
+                                    in said schedule within a time interval. Made using FastAPI and BeautifulSoup & Pandas (for parsing).
+                                </p>
+                                <small><i class="far fa-clock"></i> October 15, 2020</small>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <img class="mr-3 rounded-circle"
+                                        src="me.jpg"
+                                        alt="Generic placeholder image" style="max-width:50px">
+                                    <div class="media-body">
+                                        <h6 class="my-0 text-dark d-block">Lateș Codrin-Gabriel</h6>
+                                        <small>Student @ FMI UBB</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+</body>
+
+</html>
