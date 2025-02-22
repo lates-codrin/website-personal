@@ -40,8 +40,102 @@
             });
         });
     });
+
+
+    let isChevronUp = false; // Track the chevron state
+
+function scrollToTechnologies() {
+    if (isChevronUp) {
+        // Scroll to the top if chevron is up
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Change the chevron to down after scrolling
+        setTimeout(() => {
+            const chevronIcon = document.getElementById("chevronIcon");
+            chevronIcon.classList.remove("fa-chevron-up");
+            chevronIcon.classList.add("fa-chevron-down");
+            isChevronUp = false; // Reset state
+        }, 1000); // Wait for scroll animation to finish
+    } else {
+        // Scroll to the Technologies section
+        const techSection = document.getElementById("technologies");
+        techSection.scrollIntoView({ behavior: 'smooth' });
+
+        // Hide chevron temporarily
+        document.getElementById("scrollChevron").style.display = "none";
+
+        // Reappear at the bottom of Technologies section
+        setTimeout(() => {
+            techSection.appendChild(document.getElementById("scrollChevron"));
+            document.getElementById("scrollChevron").style.display = "block";
+        }, 1000);
+
+        // Change chevron to up
+        const chevronIcon = document.getElementById("chevronIcon");
+        chevronIcon.classList.remove("fa-chevron-down");
+        chevronIcon.classList.add("fa-chevron-up");
+        isChevronUp = true; // Update state
+    }
+}
+
+    window.addEventListener('load', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+
+
+let isScrolling;
+
+window.addEventListener('scroll', function() {
+    // Hide chevron when scrolling
+    document.getElementById("scrollChevron").classList.add("chevron-hidden");
+
+    // Reset the chevron to visible after scrolling stops
+    clearTimeout(isScrolling);
+    isScrolling = setTimeout(function() {
+        // Reappear the chevron after the user stops scrolling
+        document.getElementById("scrollChevron").classList.remove("chevron-hidden");
+    }, 1000); // Wait 150ms after the scroll stops before showing chevron again
+});
+
+
+
+
     </script>
-    
+<style>
+    .chevron-container {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        z-index: 999;
+        animation: bounce 1.5s infinite;
+        transition: opacity 0.3s ease-out; /* Adds smooth fade-out transition */
+    }
+    .chevron-hidden {
+    opacity: 0; /* Hides the chevron */
+}
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translate(-50%, 0);
+        }
+        50% {
+            transform: translate(-50%, -10px);
+        }
+    }
+    /* Smooth Scroll to Top on Refresh */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+</style>
+
+
 <body onload="document.body.style.opacity='1'">
 
     <nav class="navbar navbar-expand-lg">
@@ -161,12 +255,12 @@
 
 
 
-    <section class="wrapper">
+    <section class="wrapper mb-5">
         <div class="container">
             <div class="row">
                 <div class="col text-center mb-5">
-                    <h1 class="display-4 font-weight-bolder">Proiecte</h1>
-                    <p class="lead">Proiecte realizate in intervalul 2024-2025. </p>
+                    <h1 class="display-4 font-weight-bolder">Projects</h1>
+                    <p class="lead">Projects I worked on during 2024-2025. </p>
                 </div>
             </div>
             <div class="row">
@@ -295,6 +389,198 @@
 
         </div>
     </section>
+    <!-- Chevron Scroll Button -->
+<!-- Chevron Scroll Button -->
+<div id="scrollChevron" class="chevron-container pt-5 pb-1" onclick="scrollToTechnologies()">
+    <i id="chevronIcon" class="fa-solid fa-chevron-down fa-3x"></i>
+</div>
+<!-- Technologies Section -->
+
+<section id="technologies" class="wrapper mt-5">
+    <div class="container">
+
+        <!-- Carousel -->
+        <div id="techCarousel" class="carousel slide" data-bs-ride="carousel">
+            <section class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center mb-5">
+                            <h1 class="display-4 font-weight-bolder mt-5">Technologies</h1>
+                            <p class="lead">Technologies I have used in my projects. </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        
+                            <div class="card card-technology text-dark card-has-bg click-col"
+                                style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcBxyTVzpxqzfThS2UecmIJmgCBtTsVtDVrg&s') center/cover no-repeat;">
+                                <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                    <div class="card-body">
+                                        <small class="card-meta mb-2">UNIVERSITY WORK</small>
+                                        <h4 class="card-title mt-0">
+                                            <a class="text-dark open-github-modal" href="#" 
+                                               data-github-link="https://github.com/lates-codrin/math-program" 
+                                               data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
+                                               Python
+                                            </a>
+                                        </h4>
+                                        
+                                        <p class="card-text">
+        
+                                            Proefficient in Python, I can utilize its vast libraries and tools for things like data analysis, cybersecurity and software in general.
+                                            Some external libraries I used: Numpy, BS4, discord.py, Pandas, FastAPI.
+                                        </p>
+                                        <small><i class="fa-solid fa-bars-progress"></i> Junior Level</small>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+        
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        
+                            <div class="card card-technology text-dark card-has-bg click-col"
+                                style="background: url('https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/C++/Marin_Kitagawa_Holds_Modern_CPP_Portuguese.png') center/cover no-repeat;">
+                                <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                    <div class="card-body">
+                                        <small class="card-meta mb-2">UNIVERSITY WORK</small>
+                                        <h4 class="card-title mt-0">
+                                            <a class="text-dark open-github-modal" href="#" 
+                                               data-github-link="https://github.com/lates-codrin/airport-plane-manager" 
+                                               data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
+                                               C++
+                                            </a>
+                                        </h4>
+                                        <p class="card-text">
+        
+                                            I have used C++ for security research, mainly tampering with processes, reading and modifying process memory (in an educational way).
+                                            I have also done algorithmics for over 3+ years. 
+                                        </p>
+                                        <small><i class="fa-solid fa-bars-progress"></i> Junior Level</small>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+        
+        
+        
+        
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        
+                            <div class="card card-technology text-dark card-has-bg click-col"
+                                style="background: url('https://cat-milk.github.io/Anime-Girls-Holding-Programming-Books/static/43656b9c8b6ac1f114c66bf3a340baae/93b1c/Rin_Shima_Programming_In_Lua.avif') center/cover no-repeat;">
+                                <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                    <div class="card-body">
+                                        <small class="card-meta mb-2">PERSONAL WORK</small>
+                                        <h4 class="card-title mt-0">
+                                            <a class="text-dark" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#confirmModalCard">LUAU</a>
+                                        </h4>
+                                        <p class="card-text">
+        
+                                            Used mostly when developing assets & experience routines for a gaming platform known as ROBLOX. 
+                                            I have experience developing anti-cheats and anti-tamper software. Some libraries I used: Signal, ZonesPlus, ProfileStore, ByteNet, etc.
+                                        </p>
+                                        <small><i class="fa-solid fa-bars-progress"></i> Junior Level</small>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+        
+        
+        
+        
+                        </div>
+        
+                        
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        
+                            <div class="card card-technology text-dark card-has-bg click-col"
+                                style="background: url('https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/Javascript/Maya_Yamato_Holding_Javascript_For_Absolute_Beginners.png') center/cover no-repeat;">
+                                <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                    <div class="card-body">
+                                        <small class="card-meta mb-2">PERSONAL WORK</small>
+                                        <h4 class="card-title mt-0">
+                                            <a class="text-dark" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#confirmModalCard">Javascript</a>
+                                        </h4>
+                                        <p class="card-text">
+        
+                                            Mostly used when building websites (such as this one). I have two years of experience using Javascript. I have used it for small to medium sized projects.
+                                        </p>
+                                        <small><i class="fa-solid fa-bars-progress"></i> Junior Level</small>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+        
+        
+        
+        
+                        </div>
+
+
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        
+                            <div class="card card-technology text-dark card-has-bg click-col"
+                                style="background: url('https://cat-milk.github.io/Anime-Girls-Holding-Programming-Books/static/bb711828d8fd61269b53b1c26e1d8328/93b1c/Shima_Rin_Beginning_CSS.avif') center/cover no-repeat;">
+                                <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                    <div class="card-body">
+                                        <small class="card-meta mb-2">PERSONAL WORK</small>
+                                        <h4 class="card-title mt-0">
+                                            <a class="text-dark" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#confirmModalCard">Markup Languages</a>
+                                        </h4>
+                                        <p class="card-text">
+        
+                                            Mostly used when building websites (such as this one). I have two years of experience using HTML and CSS.
+                                            I have experience using both LaTeX for writing math related articles and Regex (regular expressions) when dealing with filtering.
+                                        </p>
+                                        <small><i class="fa-solid fa-bars-progress"></i> Medium Level</small>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+        
+        
+        
+        
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        
+                            <div class="card card-technology text-dark card-has-bg click-col"
+                                style="background: url('https://static.wikia.nocookie.net/arena-defense-arenadev/images/7/7a/Miyamoto-pfp-programmerwaif.png/revision/latest/smart/width/386/height/259?cb=20241011161506') center/cover no-repeat;">
+                                <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                    <div class="card-body">
+                                        <small class="card-meta mb-2">PERSONAL WORK</small>
+                                        <h4 class="card-title mt-0">
+                                            <a class="text-dark" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#confirmModalCard">Database Management</a>
+                                        </h4>
+                                        <p class="card-text">
+        
+                                            I have over two years of experience working with SQL and Microsoft Access, allowing me to efficiently manage, 
+                                            query, and analyze small to medium-scale datasets with accuracy and attention to detail.
+                                        </p>
+                                        <small><i class="fa-solid fa-bars-progress"></i> Junior Level</small>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+        
+        
+        
+        
+                        </div>
+
+                    </div>
+        
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
 
 
 </body>
