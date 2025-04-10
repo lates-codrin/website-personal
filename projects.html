@@ -32,49 +32,42 @@
     document.addEventListener("DOMContentLoaded", function () {
         const confirmButton = document.getElementById("confirmRedirectBtn");
     
-        // Add event listeners to all project links
         document.querySelectorAll(".open-github-modal").forEach(link => {
             link.addEventListener("click", function () {
                 const githubLink = this.getAttribute("data-github-link");
-                confirmButton.setAttribute("href", githubLink); // Update button link
+                confirmButton.setAttribute("href", githubLink); 
             });
         });
     });
 
 
-    let isChevronUp = false; // Track the chevron state
+    let isChevronUp = false; 
 
 function scrollToTechnologies() {
     if (isChevronUp) {
-        // Scroll to the top if chevron is up
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
-        // Change the chevron to down after scrolling
         setTimeout(() => {
             const chevronIcon = document.getElementById("chevronIcon");
             chevronIcon.classList.remove("fa-chevron-up");
             chevronIcon.classList.add("fa-chevron-down");
-            isChevronUp = false; // Reset state
-        }, 1000); // Wait for scroll animation to finish
+            isChevronUp = false; 
+        }, 1000); 
     } else {
-        // Scroll to the Technologies section
         const techSection = document.getElementById("technologies");
         techSection.scrollIntoView({ behavior: 'smooth' });
 
-        // Hide chevron temporarily
         document.getElementById("scrollChevron").style.display = "none";
 
-        // Reappear at the bottom of Technologies section
         setTimeout(() => {
             techSection.appendChild(document.getElementById("scrollChevron"));
             document.getElementById("scrollChevron").style.display = "block";
         }, 1000);
 
-        // Change chevron to up
         const chevronIcon = document.getElementById("chevronIcon");
         chevronIcon.classList.remove("fa-chevron-down");
         chevronIcon.classList.add("fa-chevron-up");
-        isChevronUp = true; // Update state
+        isChevronUp = true;
     }
 }
 
@@ -88,15 +81,12 @@ function scrollToTechnologies() {
 let isScrolling;
 
 window.addEventListener('scroll', function() {
-    // Hide chevron when scrolling
     document.getElementById("scrollChevron").classList.add("chevron-hidden");
 
-    // Reset the chevron to visible after scrolling stops
     clearTimeout(isScrolling);
     isScrolling = setTimeout(function() {
-        // Reappear the chevron after the user stops scrolling
         document.getElementById("scrollChevron").classList.remove("chevron-hidden");
-    }, 1000); // Wait 150ms after the scroll stops before showing chevron again
+    }, 1000); 
 });
 
 
@@ -112,10 +102,10 @@ window.addEventListener('scroll', function() {
         cursor: pointer;
         z-index: 999;
         animation: bounce 1.5s infinite;
-        transition: opacity 0.3s ease-out; /* Adds smooth fade-out transition */
+        transition: opacity 0.3s ease-out;
     }
     .chevron-hidden {
-    opacity: 0; /* Hides the chevron */
+    opacity: 0;
 }
 
     @keyframes bounce {
@@ -126,7 +116,7 @@ window.addEventListener('scroll', function() {
             transform: translate(-50%, -10px);
         }
     }
-    /* Smooth Scroll to Top on Refresh */
+    
 html {
     scroll-behavior: smooth;
 }
@@ -144,13 +134,11 @@ html {
                 <i class="fa-solid fa-terminal fa-1xl"></i> Lateș Codrin-Gabriel
             </a>
 
-            <!-- Hamburger Button (only visible on small screens) -->
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
                 data-bs-target="#baraNavigatie">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Navbar Links (hidden on large screens by default) -->
             <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="baraNavigatie">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="https://github.com/lates-codrin"><i
@@ -233,7 +221,6 @@ html {
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <!-- Updated Button to Redirect -->
                         <a id="confirmRedirectBtn" href="#" target="_blank" class="btn btn-warning">
                             <i class="fas fa-check me-2"></i>Confirma
                         </a>
@@ -264,37 +251,30 @@ html {
                 </div>
             </div>
             <div class="row">
+    
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-
                     <div class="card text-dark card-has-bg click-col"
-                        style="background: url('https://news.virginia.edu/sites/default/files/article_image/robert_berry_da_header.jpg') center/cover no-repeat;">
+                        style="background: url('https://cdn.shopify.com/s/files/1/1289/2121/t/42/assets/pf-6a2a2737--greenimagebwexample_1200x.png?v=1623219963') center/cover no-repeat;">
                         <div class="card-img-overlay d-flex flex-column justify-content-between">
                             <div class="card-body">
-                                <small class="card-meta mb-2">UNIVERSITY WORK</small>
+                                <small class="card-meta mb-2">PERSONAL WORK</small>
                                 <h4 class="card-title mt-0">
-                                    <a class="text-dark open-github-modal" href="#" 
-                                       data-github-link="https://github.com/lates-codrin/math-program" 
+                                    <a class="text-dark open-github-modal" href="#"
+                                       data-github-link="https://github.com/lates-codrin/MyScheduler"
                                        data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
-                                       Math Program
+                                       MyScheduler Mobile App
                                     </a>
                                 </h4>
-                                
                                 <p class="card-text">
-
-                                    Add numbers or insert at position in a list.
-                                    Remove or replace numbers or sublists of a list.
-                                    Get numbers with certain properties from list.
-                                    Filter list to contain numbers with certain properties.
-                                    Perform operations such as summation of elements, GCD(), MAX() on the list.
-                                    Undo any operation made on the list.
+                                    Sleek Kotlin Android app fetching real-time university data.<br>
+                                    Displays schedule, campus rooms, news, and more via a FastAPI backend.<br>
+                                    Focused on clean UI and API-driven design.
                                 </p>
-                                <small><i class="far fa-clock"></i> October 31, 2024</small>
+                                <small><i class="far fa-clock"></i> April 5, 2025</small>
                             </div>
                             <div class="card-footer">
                                 <div class="media">
-                                    <img class="mr-3 rounded-circle"
-                                        src="me.jpg"
-                                        alt="Generic placeholder image" style="max-width:50px">
+                                    <img class="mr-3 rounded-circle" src="me.jpg" alt="Generic placeholder image" style="max-width:50px">
                                     <div class="media-body">
                                         <h6 class="my-0 text-dark d-block">Lateș Codrin-Gabriel</h6>
                                         <small>Student @ FMI UBB</small>
@@ -303,72 +283,31 @@ html {
                             </div>
                         </div>
                     </div>
-
                 </div>
+    
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-
-                    <div class="card text-dark card-has-bg click-col"
-                        style="background: url('https://media.istockphoto.com/id/155439315/photo/passenger-airplane-flying-above-clouds-during-sunset.jpg?s=612x612&w=0&k=20&c=LJWadbs3B-jSGJBVy9s0f8gZMHi2NvWFXa3VJ2lFcL0=') center/cover no-repeat;">
-                        <div class="card-img-overlay d-flex flex-column justify-content-between">
-                            <div class="card-body">
-                                <small class="card-meta mb-2">UNIVERSITY WORK</small>
-                                <h4 class="card-title mt-0">
-                                    <a class="text-dark open-github-modal" href="#" 
-                                       data-github-link="https://github.com/lates-codrin/airport-plane-manager" 
-                                       data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
-                                       Airport Plane Manager
-                                    </a>
-                                </h4>
-                                <p class="card-text">
-
-                                    Perform CRUD operations on planes and passengers.<br>
-                                    Sort & combine planes by different criterias.
-                                    Visualize planes and passengers using the Plane Explorer.
-                                    And much more to come!
-                                </p>
-                                <small><i class="far fa-clock"></i> January 9, 2025</small>
-                            </div>
-                            <div class="card-footer">
-                                <div class="media">
-                                    <img class="mr-3 rounded-circle"
-                                        src="me.jpg"
-                                        alt="Generic placeholder image" style="max-width:50px">
-                                    <div class="media-body">
-                                        <h6 class="my-0 text-dark d-block">Lateș Codrin-Gabriel</h6>
-                                        <small>Student @ FMI UBB</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-
                     <div class="card text-dark card-has-bg click-col"
                         style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0dRFdsSIL9humUPcib4-D-umVJeMY7yogmg&s') center/cover no-repeat;">
                         <div class="card-img-overlay d-flex flex-column justify-content-between">
                             <div class="card-body">
                                 <small class="card-meta mb-2">PERSONAL WORK</small>
                                 <h4 class="card-title mt-0">
-                                    <a class="text-dark" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#confirmModalCard">Schedule Update API</a>
+                                    <a class="text-dark open-github-modal" href="#"
+                                       data-github-link="https://github.com/lates-codrin/ScheduleMonitor"
+                                       data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
+                                       Schedule Monitor API
+                                    </a>
                                 </h4>
                                 <p class="card-text">
-
-                                    A service that lets you connect a schedule (HTML Table format) and that notifies you if there are changes 
-                                    in said schedule within a time interval. Made using FastAPI and BeautifulSoup & Pandas (for parsing).
+                                    Monitors HTML schedules for changes and returns diffs in JSON.<br>
+                                    Built with FastAPI, BeautifulSoup, and Pandas for scraping and parsing.<br>
+                                    Streamlines academic updates through automation.
                                 </p>
-                                <small><i class="far fa-clock"></i> February 10, 2025</small>
+                                <small><i class="far fa-clock"></i> October 31, 2024</small>
                             </div>
                             <div class="card-footer">
                                 <div class="media">
-                                    <img class="mr-3 rounded-circle"
-                                        src="me.jpg"
-                                        alt="Generic placeholder image" style="max-width:50px">
+                                    <img class="mr-3 rounded-circle" src="me.jpg" alt="Generic placeholder image" style="max-width:50px">
                                     <div class="media-body">
                                         <h6 class="my-0 text-dark d-block">Lateș Codrin-Gabriel</h6>
                                         <small>Student @ FMI UBB</small>
@@ -377,29 +316,118 @@ html {
                             </div>
                         </div>
                     </div>
-
-
-
-
                 </div>
-
-
-
+    
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card text-dark card-has-bg click-col"
+                        style="background: url('https://media.istockphoto.com/id/155439315/photo/passenger-airplane-flying-above-clouds-during-sunset.jpg?s=612x612&w=0&k=20&c=LJWadbs3B-jSGJBVy9s0f8gZMHi2NvWFXa3VJ2lFcL0=') center/cover no-repeat;">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                            <div class="card-body">
+                                <small class="card-meta mb-2">UNIVERSITY WORK</small>
+                                <h4 class="card-title mt-0">
+                                    <a class="text-dark open-github-modal" href="#"
+                                       data-github-link="https://github.com/lates-codrin/airport-plane-manager"
+                                       data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
+                                       Airport Plane Manager
+                                    </a>
+                                </h4>
+                                <p class="card-text">
+                                    Manage planes & passengers with full CRUD.<br>
+                                    Includes Plane Explorer with visualization and sorting tools.<br>
+                                    CustomTkinter GUI for enhanced UX.
+                                </p>
+                                <small><i class="far fa-clock"></i> November 9, 2024</small>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <img class="mr-3 rounded-circle" src="me.jpg" alt="Generic placeholder image" style="max-width:50px">
+                                    <div class="media-body">
+                                        <h6 class="my-0 text-dark d-block">Lateș Codrin-Gabriel</h6>
+                                        <small>Student @ FMI UBB</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card text-dark card-has-bg click-col"
+                        style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBiFRcizkYNAAt-ALn2Nbyp84s8EiNxBYumw&s') center/cover no-repeat;">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                            <div class="card-body">
+                                <small class="card-meta mb-2">UNIVERSITY WORK</small>
+                                <h4 class="card-title mt-0">
+                                    <a class="text-dark open-github-modal" href="#"
+                                       data-github-link="https://github.com/lates-codrin/Caesar-Cipher"
+                                       data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
+                                       Caesar Cypher
+                                    </a>
+                                </h4>
+                                <p class="card-text">
+                                    UI with Qt QML for message encryption/decryption.<br>
+                                    Features pie chart frequency analysis.<br>
+                                    Built with focus on UI/UX and data viz.
+                                </p>
+                                <small><i class="far fa-clock"></i> March 12, 2025</small>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <img class="mr-3 rounded-circle" src="me.jpg" alt="Generic placeholder image" style="max-width:50px">
+                                    <div class="media-body">
+                                        <h6 class="my-0 text-dark d-block">Lateș Codrin-Gabriel</h6>
+                                        <small>Student @ FMI UBB</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card text-dark card-has-bg click-col"
+                        style="background: url('https://news.virginia.edu/sites/default/files/article_image/robert_berry_da_header.jpg') center/cover no-repeat;">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                            <div class="card-body">
+                                <small class="card-meta mb-2">UNIVERSITY WORK</small>
+                                <h4 class="card-title mt-0">
+                                    <a class="text-dark open-github-modal" href="#"
+                                       data-github-link="https://github.com/lates-codrin/math-program"
+                                       data-bs-toggle="modal" data-bs-target="#confirmModalCardRedirect">
+                                       Math Program
+                                    </a>
+                                </h4>
+                                <p class="card-text">
+                                    Operate on number lists: add, insert, replace, filter, and undo.<br>
+                                    Use math ops like GCD, MAX, and summation.<br>
+                                    Structured with modular design and clean logic.
+                                </p>
+                                <small><i class="far fa-clock"></i> October 31, 2024</small>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <img class="mr-3 rounded-circle" src="me.jpg" alt="Generic placeholder image" style="max-width:50px">
+                                    <div class="media-body">
+                                        <h6 class="my-0 text-dark d-block">Lateș Codrin-Gabriel</h6>
+                                        <small>Student @ FMI UBB</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
             </div>
-
         </div>
     </section>
-    <!-- Chevron Scroll Button -->
-<!-- Chevron Scroll Button -->
+    
 <div id="scrollChevron" class="chevron-container pt-5 pb-1" onclick="scrollToTechnologies()">
     <i id="chevronIcon" class="fa-solid fa-chevron-down fa-3x"></i>
 </div>
-<!-- Technologies Section -->
 
 <section id="technologies" class="wrapper mt-5">
     <div class="container">
 
-        <!-- Carousel -->
         <div id="techCarousel" class="carousel slide" data-bs-ride="carousel">
             <section class="wrapper">
                 <div class="container">

@@ -612,7 +612,7 @@ input.check-toggle-round-flat:checked + label:after {
 
 .cardd.card-right::after{
   
-  content: "Projects \A \A You can check out my projects on my GitHub page. \A \ARight now I am quite busy with school and still learning, but I will make them visible in the near future.";
+  content: "Projects \A \A You can check out my projects on my GitHub page. \A \ARight now some of the projects I am working on are still in the making, but I will make them visible in the near future.";
   font-size: 14px;
   white-space: pre;
   display: inline-block;
